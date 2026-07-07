@@ -1,4 +1,4 @@
-package Day_8;
+package Day_8_Class_task;
 
 import java.util.Scanner;
 
