@@ -14,7 +14,15 @@ class Airplane implements Flyable {
         System.out.println("Airplane is engaging engines");
     }
 }
-public class FlyableTut {
+public class FlyableTut
+
+
+
+
+
+
+
+{
     public static void main(String[] args) {
         Flyable[] flyers = new Flyable[] {
                 new Bird(),
