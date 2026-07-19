@@ -1,6 +1,6 @@
 package Day_23.Class_task;
-
-public class LinearDS {
+import java.util.NoSuchElementException;
+public class LinearDS3 {
 
 
     public static void main(String[] args) {
@@ -13,7 +13,11 @@ public class LinearDS {
 
         li.insertAtPos(0,105);
         li.insertAtPos(1,106);
-        li.insertAtPos(1,202);
+        li.insertAtPos(2,202);
+        li.insertAtPos(3,204);
+
+        li.deleteAtPos(0);
+        li.insertAtPos(6,204);
         li.display();
 
     }
@@ -115,7 +119,12 @@ class LinkedList{
     //------------insert AtPos based on index value
 
 
-    public void insertAtPos(int index, int value){
+    public void insertAtPos(int index, int value) throws NoSuchElementException{
+
+        //check whether index is valid
+
+        if(!(index>=0 && index<=size)){
+            throw new NoSuchElementException(" index value is not valid");}
 
         // if (index ==0)
         Node newnode=new Node(value);
@@ -144,11 +153,37 @@ class LinkedList{
 
     // delete in Linked
 
-    public  void deleteAtPos(int index, int value){
+    public  void deleteAtPos(int index){
+
+
 
 
         // index ==0  first element
         // last element
+        if (index ==0){
+
+            head =head.next;
+            size--;
+        }
+
+        else{
+            Node temp = head;
+
+            for(int i=0 ; i<index-1;i++){
+
+                temp =temp.next;
+
+
+            }
+
+            temp.next=temp.next.next;
+
+
+
+            size--;
+        }
+//delete -----------------------
+
 
 
 
